@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Arthur Chartier</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e8f0fe 0%, #dbeafe 100%);
+        }
+        .section-bg {
+            background: linear-gradient(135deg, #e8f0fe 0%, #f1f5f9 100%);
+        }
+        .section-accent {
+            background: linear-gradient(135deg, #274690 0%, #f7971e 100%);
+            color: #fff;
+        }
+        .card {
+            border-radius: 1rem;
+            box-shadow: 0 2px 16px rgba(39,70,144,0.08);
+        }
+        .nav-link.active, .nav-link:focus, .nav-link:hover {
+            color: #f7971e !important;
+        }
+        .btn-accent {
+            background: linear-gradient(90deg, #274690 0%, #f7971e 100%);
+            color: #fff;
+            border: none;
+        }
+        .btn-accent:hover {
+            background: linear-gradient(90deg, #19305c 0%, #f7971e 100%);
+            color: #fff;
+        }
+        footer {
+            background: linear-gradient(90deg, #274690 0%, #f7971e 100%);
+            color: #fff;
+        }
+        footer a {
+            color: #ffe7c2;
+        }
+        footer a:hover {
+            color: #fff;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        .hover-shadow:hover {
+            box-shadow: 0 4px 24px rgba(39,70,144,0.15);
+            transition: box-shadow 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="section-accent text-center py-5">
+        <div class="container">
+            <h1 class="display-4 mb-3">Bienvenue sur mon portfolio !</h1>
+            <p class="lead mb-4">Étudiant en BTS SIO option SLAM, passionné par le développement web et les nouvelles technologies.</p>
+            <a href="cv.pdf" class="btn btn-accent btn-lg mb-3" target="_blank">Voir mon CV</a>
+            <br>
+            <a href="#about" class="btn btn-outline-light mt-2">En savoir plus sur moi</a>
+        </div>
+    </header>
+
+    <nav class="nav justify-content-center sticky-top bg-white border-bottom py-2 shadow-sm">
+        <a href="#about" class="nav-link text-dark">À propos</a>
+        <a href="#skills" class="nav-link text-dark">Compétences</a>
+        <a href="#bloc5-competences" class="nav-link text-dark">Bloc 1</a>
+        <a href="#projects" class="nav-link text-dark">Projets</a>
+        <a href="#contact" class="nav-link text-dark">Contact</a>
+    </nav>
+
+    <main>
+        <section id="about" class="container section-bg py-5 rounded-4 my-5">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h2 class="mb-3">À propos de moi</h2>
+                    <p>Je m'appelle Arthur Chartier, titulaire d'un BTS SIO option SLAM. J'ai réalisé plusieurs projets en cours et en autonomie, ce qui m'a permis de développer rigueur, autonomie et esprit d'équipe.</p>
+                    <p>Mes objectifs actuels : gagner en expérience, contribuer à des projets concrets et continuer à apprendre chaque jour.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="./images/476193489_3067449033406661_1222686771137218466_n.jpg" alt="Photo de profil" class="rounded-circle img-fluid border border-3 border-primary" style="max-width: 180px;">
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section-accent py-5">
+            <div class="container">
+                <h2 class="mb-4">Compétences</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Langages</h5>
+                        <ul>
+                            <li>PHP, JavaScript, HTML/CSS, SQL, Java</li>
+                        </ul>
+                        <h5>Frameworks & Outils</h5>
+                        <ul>
+                            <li>Symfony, Bootstrap, Git</li>
+                        </ul>
+                        <h5>Bases de données</h5>
+                        <ul>
+                            <li>MySQL</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Méthodologies</h5>
+                        <ul>
+                            <li>MVC, Agile/Scrum, POO</li>
+                        </ul>
+                        <h5>Autres</h5>
+                        <ul>
+                            <li>API REST, sécurité, déploiement de site</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="container section-bg py-5 rounded-4 my-5">
+            <h2 class="mb-4">Projets réalisés</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0">
+                        <div class="card-body">
+                            <h5 class="card-title">Projet PANT</h5>
+                            <p class="card-text">Application de gestion de commandes pour restaurants.</p>
+                            <p><strong>Langages :</strong> Java, HTML, CSS, JS</p>
+                            <p><strong>Framework :</strong> Spring Boot</p>
+                            <a href="https://github.com/ton-github/pant" target="_blank" class="btn btn-outline-primary btn-sm mb-2">Voir sur GitHub</a>
+                            <a href="#" class="btn btn-outline-secondary btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#apercuPant">Aperçu</a>
+                            <p class="small text-muted">J'ai appris à gérer une base de données et à travailler en équipe.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0">
+                        <div class="card-body">
+                            <h5 class="card-title">Projet CRDD</h5>
+                            <p class="card-text">Application pour créer et visualiser des reprises de dressage.</p>
+                            <p><strong>Langages :</strong> Python, HTML, CSS, JS</p>
+                            <p><strong>Framework :</strong> Flask</p>
+                            <a href="https://github.com/ton-github/crdd" target="_blank" class="btn btn-outline-primary btn-sm mb-2">Voir sur GitHub</a>
+                            <a href="#" class="btn btn-outline-secondary btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#apercuCrdd">Aperçu</a>
+                            <p class="small text-muted">J'ai découvert le développement web avec Python et Django.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0">
+                        <div class="card-body">
+                            <h5 class="card-title">Projet 3</h5>
+                            <p class="card-text">Description du projet 3.</p>
+                            <p><strong>Langages :</strong> À compléter</p>
+                            <p><strong>Framework :</strong> À compléter</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm mb-2 disabled">Voir sur GitHub</a>
+                            <a href="#" class="btn btn-outline-secondary btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#apercuProjet3">Aperçu</a>
+                            <p class="small text-muted">À compléter.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container text-center py-4">
+            <h2 class="mb-3">Retrouvez-moi aussi sur</h2>
+            <a href="https://github.com/ton-github" target="_blank" class="btn btn-accent mx-2">GitHub</a>
+            <a href="https://linkedin.com/in/ton-linkedin" target="_blank" class="btn btn-outline-primary mx-2">LinkedIn</a>
+        </section>
+
+        <section id="contact" class="section-accent py-5">
+            <div class="container">
+                <h2 class="mb-3">Contact</h2>
+                <form action="mailto:arthur.chartier@example.com" method="post" enctype="text/plain" class="mx-auto" style="max-width: 600px;">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-light">Envoyer</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-4 mt-4">
+        <div class="container">
+            <p class="mb-1">&copy; <span class="current-year">2025</span> Arthur Chartier. Tous droits réservés.</p>
+            <p>
+                <a href="https://github.com/ton-github" target="_blank">GitHub</a> |
+                <a href="https://linkedin.com/in/ton-linkedin" target="_blank">LinkedIn</a>
+            </p>
+        </div>
+    </footer>
+    <button id="backToTop" class="btn btn-accent position-fixed" style="bottom:30px; right:30px; display:none; z-index:999;">
+        ↑ Haut
+    </button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+
+    <div class="modal fade" id="apercuPant" tabindex="-1" aria-labelledby="apercuPantLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="apercuPantLabel">Aperçu - Projet PANT</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+          </div>
+          <div class="modal-body text-center">
+            <img src="./images/aprerçu_pant.png" alt="Aperçu Projet PANT" class="img-fluid rounded">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="apercuCrdd" tabindex="-1" aria-labelledby="apercuCrddLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="apercuCrddLabel">Aperçu - Projet CRDD</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+          </div>
+          <div class="modal-body text-center">
+            <img src="./images/apreçu_CRDD.jpg" alt="Aperçu Projet CRDD" class="img-fluid rounded">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="apercuProjet3" tabindex="-1" aria-labelledby="apercuProjet3Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="apercuProjet3Label">Aperçu - Projet 3</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+          </div>
+          <div class="modal-body text-center">
+            <img src="./images/apercu-projet3.png" alt="Aperçu Projet 3" class="img-fluid rounded">
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
