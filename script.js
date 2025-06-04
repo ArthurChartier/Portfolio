@@ -15,12 +15,25 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.current-year').forEach(el => el.textContent = year);
 });
 
-// Message de confirmation à l’envoi du formulaire de contact
+// Message de confirmation à l’envoi du formulaire de contact (Formspree)
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form[action^="mailto:"]');
+    const form = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
     if(form) {
-        form.addEventListener('submit', function() {
-            alert("Merci pour votre message !");
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const data = new FormData(form);
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+            if (response.ok) {
+                formMessage.innerHTML = '<div class="alert alert-success">Merci, votre message a bien été envoyé !</div>';
+                form.reset();
+            } else {
+                formMessage.innerHTML = '<div class="alert alert-danger">Une erreur est survenue. Merci de réessayer.</div>';
+            }
         });
     }
 });

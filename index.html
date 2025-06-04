@@ -219,7 +219,7 @@
     <section id="contact" class="section-accent py-5">
             <div class="container">
                 <h2 class="mb-3">Contact</h2>
-                <form action="arthurchartierpro@gmail.com" method="post" enctype="text/plain" class="mx-auto" style="max-width: 600px;">
+                <form action="https://formspree.io/f/xpwrwwez" method="POST" class="mx-auto" style="max-width: 600px;" id="contactForm">
                     <div class="mb-3">
                         <label for="name" class="form-label">Nom</label>
                         <input type="text" class="form-control" id="name" name="name" required>
@@ -232,7 +232,10 @@
                         <label for="message" class="form-label">Message</label>
                         <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
                     </div>
+                    <!-- Champ anti-spam caché -->
+                    <input type="text" name="_gotcha" style="display:none">
                     <button type="submit" class="btn btn-light">Envoyer</button>
+                    <div id="formMessage" class="mt-3"></div>
                 </form>
             </div>
         </section>
