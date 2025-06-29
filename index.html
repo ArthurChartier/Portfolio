@@ -56,6 +56,41 @@
             box-shadow: 0 4px 24px rgba(39,70,144,0.15);
             transition: box-shadow 0.3s;
         }
+
+        .hexagon {
+            position: relative;
+            width: 100px;
+            height: 55px;
+            background-color: #f8f9fa;
+            margin: 27.5px 0;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+        .hexagon:before {
+            content: "";
+            position: absolute;
+            top: -27.5px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 27.5px solid #f8f9fa;
+        }
+        .hexagon:after {
+            content: "";
+            position: absolute;
+            bottom: -27.5px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-top: 27.5px solid #f8f9fa;
+        }
+        .hexagon:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -63,7 +98,7 @@
     <header class="section-accent text-center py-5">
         <div class="container">
             <h1 class="display-4 mb-3">Arthur Chartier</h1>
-            <p class="lead mb-4">Développeur junior tituaire d'un BTS Services Informatiques aux Organisations option Solutions Logicielles et Applications Métiers</p>
+            <p class="lead mb-4">Développeur junior titulaire d'un BTS Services Informatiques aux Organisations, option Solutions Logicielles et Applications Métiers</p>
             <a href="Arthur chartier.pdf" class="btn btn-accent btn-lg mb-3" target="_blank">Voir mon CV</a>
             <br>
             <a href="#about" class="btn btn-outline-light mt-2">En savoir plus sur moi</a>
@@ -83,8 +118,8 @@
             <div class="row align-items-center">
                 <div class="col-md-8">
                     <h2 class="mb-3">À propos de moi</h2>
-                    <p>Je m'appelle Arthur Chartier, jeune développeur informatique. J'ai réalisé plusieurs projets scolaires et personnels, ce qui m'a permis de développer rigueur, autonomie et esprit d'équipe.</p>
-                    <p>Mes objectifs actuels : gagner en expérience, contribuer à des projets concrets et continuer à apprendre chaque jour.</p>
+                    <p>Je m'appelle Arthur Chartier, développeur junior passionné par l'informatique. J'ai réalisé plusieurs projets qui m'ont permis d'acquérir de solides compétences en développement web et logiciel.</p>
+                    <p>Mes objectifs actuels : gagner en expérience professionnelle, contribuer à des projets concrets et continuer à me perfectionner dans les technologies modernes. Je suis prêt à relever de nouveaux défis et à apporter ma motivation à votre équipe.</p>
                 </div>
                 <div class="col-md-4 text-center">
                     <img src="./images/476193489_3067449033406661_1222686771137218466_n.jpg" alt="Photo de profil" class="rounded-circle img-fluid border border-3 border-primary" style="max-width: 180px;">
@@ -94,49 +129,109 @@
 
         <section id="skills" class="section-accent py-5">
     <div class="container">
-        <h2 class="mb-4 text-center">Compétences</h2>
-        <div class="row g-4 justify-content-center">
-            <!-- Hard Skills -->
-            <div class="col-md-6">
-                <div class="card h-100 border-0 shadow hover-shadow">
-                    <div class="card-body">
-                        <h3 class="card-title text-center mb-4">Hard Skills</h3>
-                        <h5>Langages</h5>
-                        <ul>
-                            <li>Python, JavaScript, HTML/CSS, SQL, Java</li>
-                        </ul>
-                        <h5>Frameworks & Outils</h5>
-                        <ul>
-                            <li>Flask, SpringBoot, Bootstrap</li>
-                        </ul>
-                        <h5>Bases de données</h5>
-                        <ul>
-                            <li>MySQL</li>
-                        </ul>
-                        <h5>Méthodologies</h5>
-                        <ul>
-                            <li>MVC, Agile/Scrum, POO</li>
-                        </ul>
-                        <h5>Autres</h5>
-                        <ul>
-                            <li>API REST, GIT, Windows, Linux, Machines Virtuelles</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card h-100 border-0 shadow hover-shadow bg-white text-dark d-flex flex-column">
-                    <div class="card-body d-flex flex-column justify-content-center align-items-center h-100 py-4">
-                        <h3 class="card-title text-center mb-4 w-100">Soft Skills</h3>
-                        <ul class="mb-0" style="font-size:1.1rem; line-height:2.1; list-style-position: outside; max-width: 320px;">
-                            <li class="mb-2 text-start">Écoute et compréhension des besoins</li>
-                            <li class="mb-2 text-start">Réactivité et respect des délais</li>
-                            <li class="mb-2 text-start">Communication claire</li>
-                            <li class="mb-2 text-start">Adaptabilité</li>
-                            <li class="mb-2 text-start">Force de proposition</li>
-                            <li class="mb-2 text-start">Fiabilité</li>
-                            <li class="text-start">Accompagnement et pédagogie</li>
-                        </ul>
+        <h2 class="mb-5 text-center">Mes Compétences</h2>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-body p-5">
+                        
+                        <!-- Tech Stack -->
+                        <div class="text-center mb-5">
+                            <h3 class="mb-4" style="color: #274690;">💻 Stack Technologique</h3>
+                            <div class="row g-3 justify-content-center">
+                                <div class="col-auto">
+                                    <div class="hexagon text-white p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background: #274690;">
+                                        <span class="fw-bold">PY</span>
+                                    </div>
+                                    <small class="d-block mt-2">Python</small>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="hexagon text-white p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background: #f7971e;">
+                                        <span class="fw-bold">JS</span>
+                                    </div>
+                                    <small class="d-block mt-2">JavaScript</small>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="hexagon text-white p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background: #274690;">
+                                        <span class="fw-bold">WEB</span>
+                                    </div>
+                                    <small class="d-block mt-2">HTML/CSS</small>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="hexagon text-white p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background: #f7971e;">
+                                        <span class="fw-bold">JV</span>
+                                    </div>
+                                    <small class="d-block mt-2">Java</small>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="hexagon text-white p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background: #6c757d;">
+                                        <span class="fw-bold">SQL</span>
+                                    </div>
+                                    <small class="d-block mt-2">Base de données</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-5">
+
+                        <!-- Frameworks -->
+                        <div class="text-center mb-5">
+                            <h4 class="mb-3" style="color: #274690;">🔧 Frameworks & Outils</h4>
+                            <div class="d-flex justify-content-center flex-wrap gap-3">
+                                <span class="badge p-3 fs-6 text-white" style="background-color: #274690;">Flask</span>
+                                <span class="badge p-3 fs-6 text-white" style="background-color: #f7971e;">Spring Boot</span>
+                                <span class="badge p-3 fs-6 text-white" style="background-color: #274690;">Bootstrap</span>
+                                <span class="badge p-3 fs-6 text-white" style="background-color: #f7971e;">MySQL</span>
+                                <span class="badge p-3 fs-6 text-white" style="background-color: #6c757d;">Git</span>
+                                <span class="badge p-3 fs-6 text-white" style="background-color: #6c757d;">API REST</span>
+                            </div>
+                        </div>
+
+                        <hr class="my-5">
+
+                        <!-- Soft Skills -->
+                        <div class="text-center">
+                            <h4 class="mb-4" style="color: #274690;">✨ Qualités Professionnelles</h4>
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-md-2 col-4 text-center">
+                                    <div class="border border-2 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width: 70px; height: 70px; border-color: #f7971e !important;">
+                                        <span style="font-size: 24px;">👂</span>
+                                    </div>
+                                    <small>Écoute active</small>
+                                </div>
+                                <div class="col-md-2 col-4 text-center">
+                                    <div class="border border-2 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width: 70px; height: 70px; border-color: #f7971e !important;">
+                                        <span style="font-size: 24px;">⚡</span>
+                                    </div>
+                                    <small>Réactivité</small>
+                                </div>
+                                <div class="col-md-2 col-4 text-center">
+                                    <div class="border border-2 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width: 70px; height: 70px; border-color: #f7971e !important;">
+                                        <span style="font-size: 24px;">💬</span>
+                                    </div>
+                                    <small>Communication</small>
+                                </div>
+                                <div class="col-md-2 col-4 text-center">
+                                    <div class="border border-2 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width: 70px; height: 70px; border-color: #f7971e !important;">
+                                        <span style="font-size: 24px;">🔄</span>
+                                    </div>
+                                    <small>Adaptabilité</small>
+                                </div>
+                                <div class="col-md-2 col-4 text-center">
+                                    <div class="border border-2 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width: 70px; height: 70px; border-color: #f7971e !important;">
+                                        <span style="font-size: 24px;">💡</span>
+                                    </div>
+                                    <small>Force de proposition</small>
+                                </div>
+                                <div class="col-md-2 col-4 text-center">
+                                    <div class="border border-2 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width: 70px; height: 70px; border-color: #f7971e !important;">
+                                        <span style="font-size: 24px;">🎯</span>
+                                    </div>
+                                    <small>Fiabilité</small>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -153,10 +248,10 @@
                             <h5 class="card-title">Projet PANT</h5>
                             <p class="card-text">Application de gestion de commandes pour restaurants.</p>
                             <p><strong>Langages :</strong> Java, HTML, CSS, JS</p>
-                            <p><strong>Framework :</strong> Spring Boot, bootstrap</p>
+                            <p><strong>Framework :</strong> Spring Boot, Bootstrap</p>
                             <a href="https://github.com/ArthurChartier/Projet-PANT" target="_blank" class="btn btn-outline-primary btn-sm mb-2">Voir sur GitHub</a>
                             <a href="#" class="btn btn-outline-secondary btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#apercuPant">Aperçu</a>
-                            <p class="small text-muted">Développement d'un site de gestion de commange et de réservation pour des restaurants.</p>
+                            <p class="small text-muted">Développement d'un site de gestion de commandes et de réservations pour restaurants.</p>
                         </div>
                     </div>
                 </div>
@@ -169,7 +264,7 @@
                             <p><strong>Framework :</strong> Flask</p>
                             <a href="https://github.com/ArthurChartier/ProjetCRDD" target="_blank" class="btn btn-outline-primary btn-sm mb-2">Voir sur GitHub</a>
                             <a href="#" class="btn btn-outline-secondary btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#apercuCrdd">Aperçu</a>
-                            <p class="small text-muted">Application de création de reprises de dressage (équitation).</p>
+                            <p class="small text-muted">Application de création de reprises de dressage équestre.</p>
                         </div>
                     </div>
                 </div>
@@ -198,7 +293,8 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
           </div>
           <div class="modal-body text-center">
-            <img src="./images/aprerçu_pant.png" alt="Aperçu Projet PANT" class="img-fluid rounded">
+            <!-- Modal PANT -->
+<img src="./images/apercu_pant.png" alt="Aperçu Projet PANT" class="img-fluid rounded">
           </div>
         </div>
       </div>
@@ -212,7 +308,8 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
           </div>
           <div class="modal-body text-center">
-            <img src="./images/apreçu_CRDD.jpg" alt="Aperçu Projet CRDD" class="img-fluid rounded">
+            <!-- Modal CRDD -->
+<img src="./images/apercu_CRDD.jpg" alt="Aperçu Projet CRDD" class="img-fluid rounded">
           </div>
         </div>
       </div>
@@ -233,52 +330,92 @@
     </div>
 
     <section id="prestation" class="container section-bg py-5 rounded-4 my-5">
-        <h2 class="mb-4 text-center">Prestations</h2>
+        <h2 class="mb-4 text-center">Mes Prestations</h2>
         <div class="row justify-content-center g-4">
             <div class="col-md-4">
                 <div class="card border-0 shadow hover-shadow h-100">
                     <div class="card-body text-center">
                         <h4 class="card-title mb-3">Site Vitrine</h4>
-                        <p class="display-6 fw-bold mb-3" style="color:#f7971e;">250€</p>
+                        <p class="display-6 fw-bold mb-3" style="color:#f7971e;">À partir de 250€</p>
                         <ul class="list-unstyled mb-4">
-                            <li>1 à 5 pages</li>
-                            <li>Responsive</li>
-                            <li>Livraison rapide</li>
+                            <li>✓ 1 à 5 pages</li>
+                            <li>✓ Design responsive</li>
+                            <li>✓ Formulaire de contact</li>
+                            <li>✓ Optimisation SEO de base</li>
+                            <li>✓ Support 1 mois inclus</li>
                         </ul>
+                        <small class="text-muted mb-3 d-block">Parfait pour artisans, professions libérales, petites entreprises</small>
                         <a href="#contact" class="btn btn-accent">Demander un devis</a>
                     </div>
                 </div>
             </div>
+            
             <div class="col-md-4">
                 <div class="card border-0 shadow hover-shadow h-100">
                     <div class="card-body text-center">
-                        <h4 class="card-title mb-3">Portfolio</h4>
-                        <p class="display-6 fw-bold mb-3" style="color:#f7971e;">200€</p>
+                        <h4 class="card-title mb-3">Site Web Complet</h4>
+                        <p class="display-6 fw-bold mb-3" style="color:#f7971e;">À partir de 450€</p>
                         <ul class="list-unstyled mb-4">
-                            <li>Design personnalisé</li>
-                            <li>Optimisé SEO</li>
-                            <li>Support inclus</li>
+                            <li>✓ 5 à 10 pages</li>
+                            <li>✓ Interface interactive</li>
+                            <li>✓ Gestion de contenu</li>
+                            <li>✓ Base de données</li>
+                            <li>✓ Animations et effets</li>
+                            <li>✓ Support 2 mois inclus</li>
                         </ul>
+                        <small class="text-muted mb-3 d-block">Idéal pour associations, PME, sites avec fonctionnalités</small>
                         <a href="#contact" class="btn btn-accent">Demander un devis</a>
                     </div>
                 </div>
             </div>
+            
             <div class="col-md-4">
                 <div class="card border-0 shadow hover-shadow h-100">
                     <div class="card-body text-center">
-                        <h4 class="card-title mb-3">Landing Page</h4>
-                        <p class="display-6 fw-bold mb-3" style="color:#f7971e;">150€</p>
+                        <h4 class="card-title mb-3">Projet Personnalisé</h4>
+                        <p class="display-6 fw-bold mb-3" style="color:#f7971e;">Sur devis</p>
                         <ul class="list-unstyled mb-4">
-                            <li>Page unique</li>
-                            <li>Appels à l’action</li>
-                            <li>Rapide à mettre en ligne</li>
+                            <li>✓ Application web sur-mesure</li>
+                            <li>✓ Fonctionnalités spécifiques</li>
+                            <li>✓ API et intégrations</li>
+                            <li>✓ Tableau de bord admin</li>
+                            <li>✓ Formation utilisateur</li>
+                            <li>✓ Maintenance évolutive</li>
                         </ul>
-                        <a href="#contact" class="btn btn-accent">Demander un devis</a>
+                        <small class="text-muted mb-3 d-block">Solutions techniques adaptées à vos besoins métier</small>
+                        <a href="#contact" class="btn btn-accent">Discutons de votre projet</a>
                     </div>
                 </div>
             </div>
         </div>
-        <p class="text-center mt-4 text-muted">Pour tout projet spécifique ou demande particulière, contactez-moi pour un devis personnalisé.</p>
+        
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-8">
+                <div class="card border-0 bg-light">
+                    <div class="card-body text-center p-4">
+                        <h5 class="mb-3">🎯 Pourquoi me choisir ?</h5>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="mb-2">💰</div>
+                                <small><strong>Prix abordables</strong><br>Tarifs adaptés aux budgets serrés</small>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-2">⚡</div>
+                                <small><strong>Livraison rapide</strong><br>Délais courts et respectés</small>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-2">🤝</div>
+                                <small><strong>Accompagnement</strong><br>Suivi personnalisé et pédagogique</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <p class="text-center mt-4 text-muted">
+            <strong>Délais moyens :</strong> Site vitrine 1-2 semaines | Site web complet 3-4 semaines | Projet personnalisé selon complexité
+        </p>
     </section>
 
     <section class="container text-center py-4">
